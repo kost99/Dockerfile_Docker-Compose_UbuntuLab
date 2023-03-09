@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  ubulab:
+    image: ubulab
+    container_name: myubulab
+    volumes:
+      - /home/ansible-service-account/Dockerfile-Example/workdir:/home/ansible-service-account/workdir
+    ports:
+      - "2022:22"
+    restart: always
+
+networks:
+  default:
+    driver: bridge
+    name: dockernet
